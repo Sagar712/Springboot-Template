@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background-color: rgb(27, 54, 54);
+    min-height: 100vh;
+}
+
+.head{
+    width: 100vw;
+    height: 3.5rem;
+    justify-content: center;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 119, 119);
+    color: white;
+}
+
+.listall{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(0, 65, 65);
+    width: 50vw;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+tr{
+    height: 3rem;
+    font-size: 1rem;
+}
+td:nth-child(even){
+    text-align: left;
+}
+tr:nth-child(even){
+    background-color: teal;
+}
+tr:nth-child(odd){
+    background-color: rgb(0, 107, 107);
+}
+
+button{
+    height: 1.8rem;
+    width: 5rem;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px black;
+    background-color: white;
+}
+button:active{
+    background-color: rgb(187, 187, 187);
+    box-shadow: 0px 0px 3px 0px black;
+    transform: scale(0.97);
+    font-size: 0.85rem;
+}
+
+@media screen and (max-width:960px){
+    table{
+        width: 97vw;
+    }
+    button{
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    a{
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+}
