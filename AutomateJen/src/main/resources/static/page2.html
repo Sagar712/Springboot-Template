@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>All Apps</title>
+    <title>CreateFile</title>
+	<style>
+		*{
+		    margin: 0;
+		    font-family: 'Kumbh Sans', sans-serif;
+		}
+		
+		body{
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    background-color: rgb(39, 39, 39);
+		    color: white;
+		}
+		
+		h2{
+		    margin-top: 2rem;
+		}
+		
+		button{
+		    margin-top: 2rem;
+		    height: 2rem;
+		    width: 8rem;
+		    font-size: 1.1rem;
+		    background-color: white;
+		    border:none;
+		    cursor: pointer;
+		}
+		
+		p{
+		    margin-top: 2rem;
+		}
+	</style>
 </head>
 <body>
-<h1>Helo<h1>
+
+    <h2>Demo for creating a file using Springboot as backend and Simple html, css Js as frontend</h2>
+    <div>
+        <button onclick="sendReqToCreate()">Create File</button>
+        <button onclick="location.href='./'">Go to home</button>
+    </div>
+    
+    <p id="respo">-- Response will appear here --</p>
+
+    <script>
+        function sendReqToCreate() {
+            fetch("http://localhost:8080/createFile").
+            then(res => {
+                return res.text();
+            }).
+            then(resp => {
+                document.getElementById('respo').innerText = resp;
+            });
+        }
+    </script>
 </body>
 </html>

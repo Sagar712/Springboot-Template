@@ -4,80 +4,27 @@
 }
 
 body{
-    background-color: rgb(27, 54, 54);
-    min-height: 100vh;
-}
-
-.head{
-    width: 100vw;
-    height: 3.5rem;
-    justify-content: center;
-    font-size: 1.3rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background-color: rgb(0, 119, 119);
+    background-color: rgb(39, 39, 39);
     color: white;
 }
 
-.listall{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-table{
-    border-collapse: collapse;
-    border: 2px solid rgb(0, 65, 65);
-    width: 50vw;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    color: white;
-}
-
-tr{
-    height: 3rem;
-    font-size: 1rem;
-}
-td:nth-child(even){
-    text-align: left;
-}
-tr:nth-child(even){
-    background-color: teal;
-}
-tr:nth-child(odd){
-    background-color: rgb(0, 107, 107);
+h2{
+    margin-top: 2rem;
 }
 
 button{
-    height: 1.8rem;
-    width: 5rem;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    box-shadow: 0px 0px 8px 0px black;
+    margin-top: 2rem;
+    height: 2rem;
+    width: 8rem;
+    font-size: 1.1rem;
     background-color: white;
-}
-button:active{
-    background-color: rgb(187, 187, 187);
-    box-shadow: 0px 0px 3px 0px black;
-    transform: scale(0.97);
-    font-size: 0.85rem;
+    border:none;
+    cursor: pointer;
 }
 
-@media screen and (max-width:960px){
-    table{
-        width: 97vw;
-    }
-    button{
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-    }
-    a{
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-    }
+p{
+    margin-top: 2rem;
 }

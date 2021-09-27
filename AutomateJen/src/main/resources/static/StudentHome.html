@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateFile</title>
+    <style>
+        table{
+            border: black;
+            border-collapse: collapse;
+            min-width: 70%;
+        }
+        th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add Student</h1>
+    <br>
+    Name: <input type="text" id="name">
+    <br>
+    School Name: <input type="text" id="school">
+    <br>
+    Roll no: <input type="text" id="roll">
+
+    <br>
+    <button onclick="SendData()">Add</button>
+
+    <br>
+    <button onclick="fetchAll()">Show all Students:</button>
+    <br>
+
+    <table id="allEntries">
+
+    </table>
+
+    <script>
+
+        
+        function SendData() {
+            let nameS = document.getElementById('name').value;
+            let School = document.getElementById('school').value;
+            let RollN = document.getElementById('roll').value;
+            let obj = {
+                "name" : nameS,
+                "schoolName" : School,
+                "rollNo": RollN
+            }
+            fetch('http://localhost:8080/student', {
+                method: 'POST',
+                body: JSON.stringify(obj),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }   
+            })
+            .then(res=>{
+                fetchAll();
+            });
+        }
+        function fetchAll() {
+
+            let Str="<tr><th>Name</th><th>School Name</th><th>Roll No</th></tr>";
+
+            fetch('http://localhost:8080/student')
+            .then(response => {
+                return response.json();
+            })
+            .then(res => {
+                console.log(res[0]);
+                let i=0;
+                while(res[i]!=null){
+                    let element = res[i];
+                    Str = Str.concat(`<tr><td>${element.name}</td><td>${element.schoolName}</td><td>${element.rollNo}</td></tr>`);
+                    i++;
+                }
+                console.log(Str);
+                document.getElementById('allEntries').innerHTML = Str;
+            });
+             
+        }
+    </script>
+</body>
+</html>
